@@ -26,8 +26,8 @@ jobs:
         with:
           context: .
           build-args: |
-            ROS_DISTRO="humble"
-            COLCON_BUILD_ARSG=""
+            ROS_DISTRO=humble
+            COLCON_BUILD_ARSG=
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -37,8 +37,8 @@ jobs:
         with:
           context: .
           build-args: |
-            ROS_DISTRO="humble"
-            COLCON_BUILD_ARSG="--symlink-install"
+            ROS_DISTRO=humble
+            COLCON_BUILD_ARSG=--symlink-install
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -48,8 +48,8 @@ jobs:
         with:
           context: .
           build-args: |
-            ROS_DISTRO="humble"
-            COLCON_BUILD_ARSG="--merge-install"
+            ROS_DISTRO=humble
+            COLCON_BUILD_ARSG=--merge-install
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -60,8 +60,8 @@ jobs:
         with:
           context: .
           build-args: |
-            ROS_DISTRO="iron"
-            COLCON_BUILD_ARSG=""
+            ROS_DISTRO=iron
+            COLCON_BUILD_ARSG=
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -71,8 +71,8 @@ jobs:
         with:
           context: .
           build-args: |
-            ROS_DISTRO="iron"
-            COLCON_BUILD_ARSG="--symlink-install"
+            ROS_DISTRO=iron
+            COLCON_BUILD_ARSG=--symlink-install
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -82,7 +82,7 @@ jobs:
         with:
           context: .
           build-args: |
-            ROS_DISTRO="humble"
-            COLCON_BUILD_ARSG="--merge-install"
+            ROS_DISTRO=humble
+            COLCON_BUILD_ARSG=--merge-install
           cache-from: type=gha
           cache-to: type=gha,mode=max
