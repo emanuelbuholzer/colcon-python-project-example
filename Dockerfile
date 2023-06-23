@@ -26,6 +26,8 @@ RUN git clone https://github.com/colcon/colcon-python-project.git -b devel src/c
 
 COPY src/standalone_example_pytest src/standalone_example_pytest
 COPY src/standalone_example_unittest src/standalone_example_unittest
+COPY src/example_library src/example_library
+COPY src/example_library_dependent src/example_library_dependent
 
 RUN apt-get update && \
     rosdep install -iy --from-paths src && \
