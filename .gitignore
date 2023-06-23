@@ -4,5 +4,3 @@ build/
 log/
 /src/colcon-python-project/
 src/colcon-python-project/
-src/standalone_example/build
-src/standalone_example/standalone_example.egg-info
