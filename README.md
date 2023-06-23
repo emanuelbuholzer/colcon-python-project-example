@@ -5,15 +5,14 @@ For more information, see the [Call For Testing: Standards-based Python packagin
 
 This repository aims to implement minimum examples the following scenarios listed below.
 
-| Description                                                       | Status          |
-|-------------------------------------------------------------------|-----------------|
-| Standalone packages utilizing pytest and unittest with setuptools | Implement       |
-| Inter package dependencies                                        | Not implemented |
-| Providing pytest plugins and fixtures across packages             | Not implemented |
-| Providing python sources for other packages                       | Not implemented |
-| Packages utilizing PEP 517 with a pyproject.toml                  | Not implemented |
+| Description                                           | Status                                                            |
+|-------------------------------------------------------|-------------------------------------------------------------------|
+| Standalone packages utilizing pytest and unittest     | Minimal setuptools implementation, PEP 517 implementation missing |
+| Inter package dependencies                            | Minimal setuptools implementation, PEP 517 implementation missing |
+| Providing pytest plugins and fixtures across packages | Minimal setuptools implementation, PEP 517 implementation missing |
+| Providing python sources for other packages           | Not implemented                                                   |
 
-The packages should be able to be built with merge and symlink installs, as well as regular builds.
+The packages should be able to be built with merge and symlink installs, as well as regular builds and work with PEP 517.
 
 ## Install colcon-python-project
 
