@@ -5,12 +5,12 @@ For more information, see the [Call For Testing: Standards-based Python packagin
 
 This repository aims to implement minimum examples the following scenarios listed below.
 
-| Description                                           | Status                                                            |
-|-------------------------------------------------------|-------------------------------------------------------------------|
-| Standalone packages utilizing pytest and unittest     | Minimal setuptools implementation, PEP 517 implementation missing |
-| Inter package dependencies                            | Minimal setuptools implementation, PEP 517 implementation missing |
-| Providing pytest plugins and fixtures across packages | Minimal setuptools implementation, PEP 517 implementation missing |
-| Providing python sources for other packages           | Not implemented                                                   |
+| Description                                           | Status                                                                                                            |
+|-------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Standalone packages utilizing pytest and unittest     | Minimal setuptools implementation, PEP 517 implementation for standalone pytest package available with some TODOs |
+| Inter package dependencies                            | Minimal setuptools implementation, PEP 517 implementation missing                                                 |
+| Providing pytest plugins and fixtures across packages | Minimal setuptools implementation, PEP 517 implementation missing                                                 |
+| Providing python source trees for other packages      | Implemented but not explicit tests                                                                                |
 
 The packages should be able to be built with merge and symlink installs, as well as regular builds and work with PEP 517.
 
@@ -32,4 +32,12 @@ colcon build
 Verify the installation. The extension is active if you see `python.project` and `ros.ament_python.project` packages:
 ```shell
 colcon list
+```
+
+## Open questions
+
+How to install package markers to avoid these:
+```shell
+[0.597s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'pep517_standalone_example_pytest' doesn't explicitly install a marker in the package index (colcon-ros currently does it implicitly but that fallback will be removed in the future)
+[0.598s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'pep517_standalone_example_pytest' doesn't explicitly install the 'package.xml' file (colcon-ros currently does it implicitly but that fallback will be removed in the future)
 ```

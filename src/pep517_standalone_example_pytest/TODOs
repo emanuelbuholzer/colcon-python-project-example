@@ -1,0 +1,2 @@
+[ ] How can the data_files part in the call to setup be omitted without getting two deprecation warnings
+[ ] setup.cfg can be omitted, will this break providing source trees for other packages? if so, is it possible to provide the same functionality within a pyproject.toml?

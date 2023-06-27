@@ -30,6 +30,7 @@ COPY src/example_library src/example_library
 COPY src/example_library_dependent src/example_library_dependent
 COPY src/example_pytest_plugin src/example_pytest_plugin
 COPY src/example_pytest_plugin_dependent src/example_pytest_plugin_dependent
+COPY src/pep517_standalone_example_pytest src/pep517_standalone_example_pytest
 
 RUN apt-get update && \
     rosdep install -iy --from-paths src && \
