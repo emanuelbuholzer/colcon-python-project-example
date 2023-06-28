@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="pep517_standalone_example_unittest"
+authors = [
+    {name="oxb", email="emanuel0xb@gmail.com"}
+]
+description="TODO: Package description"
+license = "TODO: License declaration"
+
+zip-safe = true
+packages=["pep517_standalone_example_unittest"]

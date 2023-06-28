@@ -33,11 +33,3 @@ Verify the installation. The extension is active if you see `python.project` and
 ```shell
 colcon list
 ```
-
-## Open questions
-
-How to install package markers to avoid these:
-```shell
-[0.597s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'pep517_standalone_example_pytest' doesn't explicitly install a marker in the package index (colcon-ros currently does it implicitly but that fallback will be removed in the future)
-[0.598s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'pep517_standalone_example_pytest' doesn't explicitly install the 'package.xml' file (colcon-ros currently does it implicitly but that fallback will be removed in the future)
-```

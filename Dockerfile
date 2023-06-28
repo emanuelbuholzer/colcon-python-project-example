@@ -21,7 +21,7 @@ RUN git clone https://github.com/colcon/colcon-python-project.git -b devel src/c
     python3-poetry \
     pylint \
     && \
-    pip install scspell3k>=2.2 && \
+    pip install scspell3k && \
     rm -rf /var/lib/apt/lists/
 
 COPY src/standalone_example_pytest src/standalone_example_pytest
@@ -31,17 +31,20 @@ COPY src/example_library_dependent src/example_library_dependent
 COPY src/example_pytest_plugin src/example_pytest_plugin
 COPY src/example_pytest_plugin_dependent src/example_pytest_plugin_dependent
 COPY src/pep517_standalone_example_pytest src/pep517_standalone_example_pytest
+COPY src/pep517_standalone_example_unittest src/pep517_standalone_example_unittest
+COPY src/pep517_example_library src/pep517_example_library
+COPY src/pep517_example_library_dependent src/pep517_example_library_dependent
 
 RUN apt-get update && \
     rosdep install -iy --from-paths src && \
     rm -rf /var/lib/apt/lists/
  
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
-    colcon build $COLCON_BUILD_ARGS --continue-on-error
+    colcon --log-level info build $COLCON_BUILD_ARGS --continue-on-error --event-handlers console_direct+
  
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
     colcon list ; \
-    colcon test --packages-skip colcon-python-project --event-handlers console_direct+ ; \
+    colcon --log-level info test --packages-skip colcon-python-project --event-handlers console_direct+ ; \
     colcon test-result --verbose
 
 RUN sed --in-place --expression \
